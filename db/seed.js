@@ -1,7 +1,7 @@
 import CHEESES from "./cheeses.json";
 import Cheese from "./models/Cheese.model";
 
-export default function seed() {
+export default async function seed() {
 	let data = [];
 
 	for (let cheese of Object.keys(CHEESES)) {
@@ -11,5 +11,5 @@ export default function seed() {
 		});
 	}
 
-	return Cheese.bulkCreate(data);
+	await Cheese.bulkCreate(data);
 }
