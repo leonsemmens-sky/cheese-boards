@@ -3,7 +3,7 @@ node_modules/
 .vscode
 .idea
 .env
-project-lock.json
+package-lock.json
 
 #sqlite
 *.sqlite
