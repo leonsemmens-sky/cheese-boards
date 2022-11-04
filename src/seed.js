@@ -1,4 +1,5 @@
 // import CHEESES from "./cheeses.json" assert { type: "json" };
+import db from "../db";
 import { User, Board, Cheese } from "../db/models";
 
 // Jest didn't like the ES6 import statement
@@ -42,9 +43,12 @@ const CHEESES = {
 };
 
 export default async function seed() {
-	await User.sync({ force: true });
-	await Board.sync({ force: true });
-	await Cheese.sync({ force: true });
+	// await User.sync({ force: true });
+	// await Board.sync({ force: true });
+	// await Cheese.sync({ force: true });
+
+	// MUST DO:
+	await db.sync({ force: true });
 
 	let data = [];
 
