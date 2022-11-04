@@ -32,6 +32,20 @@ describe("Test the User model", () => {
 				})
 			);
 		});
+
+		it("user emails should be unique", async () => {
+			await User.create({
+				name: "Steve",
+				email: "steve.johnson@multiverse.io",
+			});
+
+			expect(async () => {
+				await User.create({
+					name: "Steve",
+					email: "steve.johnson@multiverse.io",
+				});
+			}).rejects.toThrow();
+		});
 	});
 
 	describe("Test with multiple records", () => {

@@ -30,6 +30,20 @@ describe("Test the Cheese model", () => {
 				})
 			);
 		});
+
+		it("cheese title should be unique", async () => {
+			await Cheese.create({
+				title: "Brie",
+				description: "The Queen of Cheeses.",
+			});
+
+			expect(async () => {
+				await Cheese.create({
+					title: "Brie",
+					description: "The Queen of Cheeses.",
+				});
+			}).rejects.toThrow();
+		});
 	});
 
 	describe("Test with multiple records", () => {
