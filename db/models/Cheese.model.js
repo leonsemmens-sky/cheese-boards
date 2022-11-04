@@ -13,6 +13,7 @@ Cheese.init(
 		title: {
 			type: DataTypes.TEXT,
 			allowNull: false,
+			unique: true,
 		},
 		description: {
 			type: DataTypes.TEXT,
